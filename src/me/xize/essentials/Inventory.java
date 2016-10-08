@@ -19,14 +19,14 @@ package me.xize.essentials;
 public interface Inventory {
 	
 	/**
-	 * <p>returns the name of the inventory</p>
+	 * <p>returns the name of the Inventory</p>
 	 * 
 	 * @return String
 	 */
 	public String getName();
 	
 	/**
-	 * <p>returns the type of the inventory</p>
+	 * <p>returns the type of the Inventory</p>
 	 * 
 	 * @return InventoryType
 	 * @see InventoryType
@@ -34,10 +34,70 @@ public interface Inventory {
 	public InventoryType getType();
 	
 	/**
-	 * <p>returns the size of the inventory</p>
+	 * <p>returns the size of the Inventory</p>
 	 *
 	 * @return int
 	 */
 	public int getSize();
+	
+	/**
+	 * <p>returns all the ItemStack's inside the Inventory</p>
+	 * 
+	 * @return ItemStack[]
+	 * @see ItemStack
+	 */
+	public ItemStack[] getContents();
+	
+	/**
+	 * <p>sets all the ItemStack's inside the Inventory</p>
+	 * 
+	 * @param items
+	 * @see ItemStack
+	 */
+	public void setContents(ItemStack[] items);
+	
+	/**
+	 * <p>add the ItemStack into the Inventory</p>
+	 * 
+	 * @param item - the ItemStack
+	 * @see ItemStack
+	 */
+	public void addItem(ItemStack item);
+	
+	/**
+	 * <p>adds the ItemStack on a specified slot</p>
+	 * 
+	 * @param item - the ItemStack
+	 * @param slot - the slot
+	 * @see ItemStack
+	 */
+	public void addItem(ItemStack item, int slot);
+	
+	/**
+	 * <p>returns the ItemStack which is currently selected (clicked on)</p>
+	 * @return ItemStack
+	 * @see ItemStack
+	 */
+	public ItemStack getSelected();
+	
+	/**
+	 * <p>returns the ItemStack where the mouse hovers over, null when no ItemStack is found</p>
+	 * 
+	 * @return ItemStack
+	 * @see ItemStack
+	 */
+	public ItemStack getCursor();
+	
+	public ItemStack getItemInHand();
+	
+	public void closeInventory();
+	
+	public Entity getHolder();
+	
+	public boolean hasHolder();
+	
+	public Entity[] getViewers();
+	
+	public boolean hasViewers();
 
 }

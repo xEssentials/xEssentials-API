@@ -18,28 +18,20 @@ package me.xize.essentials;
 
 import java.util.UUID;
 
-public interface Player extends Entity {
-	
+public interface Entity {
+
 	/**
-	 * <p>returns the name of the player</p>
+	 * <p>returns the name of the specified entity</p>
 	 * 
 	 * @return String
 	 */
 	public String getName();
 	
 	/**
-	 * <p>returns the unique id of the player, on very old versions of minecraft this unique id is the id inside the world</p>
+	 * <p>returns the unique id of the specified entity</p>
 	 * 
 	 * @return UUID
 	 */
 	public UUID getUniqueId();
-	
-	/**
-	 * <p>returns the inventory of the player</p>
-	 * 
-	 * @return Inventory
-	 */
-	public Inventory getInventory();
-	
 	
 }
