@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package me.xize.essentials;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -78,7 +79,14 @@ public class InventoryType {
 	 * @return InventoryType[]
 	 */
 	public static InventoryType[] values() {
-		return data.toArray(new InventoryType[data.size()]);
+		InventoryType[] types = new InventoryType[data.size()];
+		Iterator<InventoryType> it = data.iterator();
+		int index = 0;
+		while(it.hasNext()) {
+			types[index] = it.next();
+			index++;
+		}
+		return types;
 	}
 	
 }
